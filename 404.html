@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>404: Ошибка матрицы</title>
+	<style>
+		:root {
+			--b0: #2d2c33;
+			--c0: #e0e0e1;
+			--b1: #343d5c;
+			--c1: #e1e2e7;
+			--c3: #638fff;
+			--b2: #424247;
+			--c2: #708da6;
+		}
+
+		body {
+			background-color: var(--b0);
+			color: var(--c0);
+			font-family: 'Courier New', monospace;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			overflow: hidden;
+		}
+
+		.modal {
+			background-color: var(--b1);
+			border: 1px solid var(--c3);
+			border-radius: 4px;
+			padding: 30px;
+			max-width: 400px;
+			width: 90%;
+			text-align: center;
+			position: relative;
+			box-shadow: 0 0 20px var(--c3);
+		}
+
+		.close-btn {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			background: none;
+			border: none;
+			color: var(--c3);
+			font-size: 20px;
+			cursor: pointer;
+		}
+
+		h1 {
+			color: var(--c3);
+			font-size: 2rem;
+			margin-bottom: 10px;
+		}
+
+		p {
+			color: var(--c2);
+			margin-bottom: 20px;
+			line-height: 1.4;
+		}
+
+		.matrix {
+			font-size: 1.5rem;
+			margin: 20px 0;
+			color: var(--c3);
+			animation: matrix 2s steps(40) infinite;
+		}
+
+		@keyframes matrix {
+			0% { opacity: 0; }
+			100% { opacity: 1; }
+		}
+	</style>
+</head>
+<body>
+	<div class="modal" id="modal">
+		<button class="close-btn" id="closeBtn">&times;</button>
+		<h1>404</h1>
+		<div class="matrix">01010100 01101000 01100101</div>
+		<p>Ошибка матрицы: страница не найдена.<br>Возвращаем вас в реальность.</p>
+	</div>
+
+	<script>
+		const modal = document.getElementById('modal');
+		const closeBtn = document.getElementById('closeBtn');
+
+		function goHome() {
+			window.location.href = '/';
+		}
+
+		closeBtn.addEventListener('click', goHome);
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape') {
+				goHome();
+			}
+		});
+	</script>
+<!-- 
+Вариант 3: "Ошибка матрицы"
+Концепция: Пользователь "попал в цифровую дыру" и видит "ошибку матрицы".
+ -->

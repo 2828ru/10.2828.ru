@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow: /cgi-bin/
+Disallow: /mx/
+Disallow: /km/
+Disallow: /log/
+Disallow: /key/
+Disallow: /inf/
